@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio - Charles Firmino</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        pre {
+            background-color: #1a1a2e;
+            color: #80d0ff;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Portfólio</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Sobre Mim</a>
+        <a href="formacao.html">Formação</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <main>
+        <h2>Projetos Desenvolvidos</h2>
+
+        <!-- PROJETO 1 -->
+        <h3>🖥️ Loja do Charles - Cálculo de Preços e Descontos (Python)</h3>
+        <pre>
+print(' Bem vindo a loja do Charles Augusto Firmino') #A
+print('           A sua Loja dos Gamers !! ')
+
+print('Produtos disponiveis:')
+print('Processador: R$ 1000.00 a unidade  - ESTOQUE : (100)') #B
+print('Memoria : R$ 500.00 a unidade  - ESTOQUE :  (100) ')
+
+P = int(input('Digite a quantidade de processadores : '))
+M = int(input('Digite a quantidade de ram : '))
+
+preco = 1000 * P + 500 * M
+desconto = preco / 100
+percentual = 0
+
+if 2500 <= preco < 6000:
+    desconto = desconto * 4
+    percentual = 4
+else:
+    if preco < 2500:
+        desconto = desconto * 0
+        percentual = 0
+
+if 6000 <= preco < 10000:
+    desconto = desconto * 7
+    percentual = 7
+elif preco >= 10000:
+    desconto = desconto * 11
+    percentual = 11
+
+final = preco - desconto
+print(f'P= {P} . M:= {M}.')
+print(f'Valor calculado sem desconto : R${preco}:')
+print(f'Parabéns! Você obteve {percentual}% de desconto!: R${desconto} de desconto!')
+print(f'Valor com desconto aplicado : R${final}')
+print(f'Valor total a pagar : R${final}')
+print(f'Qual vai ser a forma de pagamento?')
+print(f'Credito, Débito ou Pix?')
+print(f'...Pagamento foi concluido!')
+print(f'Obrigado pela compra,volte sempre !')
+        </pre>
+
+        <!-- PROJETO 2 -->
+        <h3>🍧 Loja de Açaí e Cupuaçu - Simulador de Pedidos (Python)</h3>
+        <pre>
+print('Bem vindo a loja do Charles Augusto Firmino')  # Mensagem de boas vindas
+print('O melhor Acai e Cupuaço você encontra aqui! ')
+print('ㅤ')  # Espaçamento visual
+
+print('                    CARDÁPIO')
+print('---------------------------------------------------')
+print('---| TAMANHO |  CUPUAÇO ( CP ) |   AÇAI ( AC ) |---')
+print('---|   P     |   R$ 9.00       |  R$ 11.00     |---')
+print('---|   M     |   R$ 14.00      |  R$ 16.00     |---')
+print('---|   G     |   R$ 18.00      |  R$ 20.00     |---')
+print('---------------------------------------------------')
+
+total = 0
+
+while True:
+    while True:
+        sabor = input('Qual sabor desejado (CP/AC) ?')
+        if sabor in ['CP','AC']:
+            break
+        else:
+            print('Sabor inválido. Tente novamente')
+
+    while True:
+        tamanho = input('Qual tamanho desejado (P,M ou G)?')
+        if tamanho in ['P','M','G']:
+            break
+        else:
+            print("Tamanho inválido. Tente novamente")
+
+    if sabor == 'CP':
+        if tamanho == 'P': preco = 9.00
+        elif tamanho == 'M': preco = 14.00
+        elif tamanho == 'G': preco = 18.00
+
+    if sabor == 'AC':
+        if tamanho == 'P': preco = 11.00
+        elif tamanho == 'M': preco = 16.00
+        elif tamanho == 'G': preco = 20.00
+
+    print(f'Você pediu um {sabor} no tamanho {tamanho}: R$ {preco}')
+    total += preco
+
+    while True:
+        acompanhamento = input('Deseja mais alguma coisa ? ( S/N )')
+        if acompanhamento == 'S':
+            break
+        elif acompanhamento == 'N':
+            break
+        else:
+            print('Opção inválida. Tente novamente!')
+
+    if acompanhamento == 'N':
+        break
+
+print(f'Valor total a ser pago : R$ {total}')
+print(f'Qual vai ser a forma de pagamento?')
+print(f'Credito, Débito ou Pix?')
+print(f'...Pagamento foi concluido!')
+print(f'Obrigado pela compra,volte sempre !')
+        </pre>
+
+        <!-- PROJETO 3 -->
+        <h3>🗃️ Banco de Dados - Locadora de Veículos (Modelagem e SQL)</h3>
+        <p>Este projeto teve como objetivo criar e manipular um banco de dados para uma locadora de veículos. Inclui a modelagem relacional, implementação das tabelas em SQL e consultas para relatórios gerenciais.</p>
+
+        <h4>Exemplo de criação de tabela:</h4>
+        <pre>
+CREATE TABLE Cliente (
+    idCliente int NOT NULL,
+    CPF varchar(20) NOT NULL,
+    nome varchar(50) NOT NULL,
+    telefone varchar(20) NOT NULL,
+    email varchar(50) NOT NULL,
+    endereco varchar(100) NOT NULL,
+    PRIMARY KEY (idCliente)
+);
+        </pre>
+
+        <h4>Exemplo de consulta SQL:</h4>
+        <pre>
+SELECT
+    Cliente.nome,
+    SUM(Pagamento.valorTotal) AS valor_devido
+FROM
+    Cliente
+JOIN
+    Locacao ON Cliente.idCliente = Locacao.idCliente
+JOIN
+    Pagamento ON Locacao.idPagamento = Pagamento.idPagamento
+WHERE
+    Pagamento.estado = 'Pendente'
+GROUP BY
+    Cliente.idCliente, Cliente.nome
+ORDER BY
+    Cliente.nome ASC;
+        </pre>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Charles Firmino</p>
+    </footer>
+</body>
+</html>
