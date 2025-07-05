@@ -1,0 +1,129 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Meu nome principal da pagina */
+header {
+    background: linear-gradient(135deg, #3f0071, #5a189a); /* roxo claro e escuro para pagina */
+    color: #e0d7f5;
+    padding: 20px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+
+nav {
+    background: linear-gradient(135deg, #4a148c, #7b2ff7); /* roxo com degrade */
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+nav a {
+    color: #d3c2f2;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+nav a:hover {
+    color: #b084f7;
+}
+
+nav a.active {
+    color: #b084f7;
+    border-bottom: 2px solid #b084f7;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(129, 49, 235, 0.3);
+}
+
+p {
+    font-size: 20px;  
+    line-height:2;
+    margin-bottom: 15px; 
+}
+
+/* Listas */
+ul {
+    margin: 10px 0 20px 20px;
+    font-size: 20px;  
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #a18cd1;
+    border-radius: 4px;
+    font-size: 26px;
+    resize: vertical;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 12px;
+    background: linear-gradient(135deg, #4a148c, #7b2ff7);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #7b2ff7, #4a148c);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    font-size: 16px;
+    color: #6a5495;
+    padding: 15px 10px;
+    border-top: 1px solid #b084f7;
+}
+
+
+pre {
+    background-color: #3f0071;
+    color: #d3c2f2;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin-bottom: 25px;
+}
